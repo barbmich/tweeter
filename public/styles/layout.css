@@ -13,11 +13,9 @@ html {
 /*
  * Global layout stuff
  */
-nav {
-  font-family: 'Bungee', sans-serif;
-}
 
-body {
+ body {
+  display: flex;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
