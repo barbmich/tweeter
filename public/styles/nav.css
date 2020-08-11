@@ -7,7 +7,9 @@ nav {
   height: 120px;
   background-color: #704f50;
   color: #ffffff;
-
+  /* position: fixed;
+  top: 0;
+  width: 100%; */
 }
 
 .brand {

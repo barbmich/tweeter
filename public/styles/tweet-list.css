@@ -1,0 +1,33 @@
+
+.tweet-container {
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: rebeccapurple;
+
+}
+
+article.tweet {
+
+  width: 90%;
+
+}
+
+article.tweet header {
+
+  display: flex;
+  justify-self: right;
+
+}
+
+article.tweet p {
+
+}
+
+article.tweet footer {
+
+  display: flex;
+  justify-content: space-between;
+
+}

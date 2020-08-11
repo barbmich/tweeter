@@ -15,6 +15,7 @@ html {
  */
 
  body {
+  display: block;
   color: #545149;
   background: #f9f0af;
   font-size: 24px;
@@ -28,10 +29,9 @@ html {
 .header-and-main {
   display: flex;
   flex-wrap: wrap;
+
 }
 
 .container {
   flex-grow: 9;
-  /* max-width: 90%; */
 }
-
