@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.new-tweet {
+  width: 80%;
+  margin: 1.5em;
+}
+
+#tweet-text {
+  width: 100%;
+  resize: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid;
+}
+
+#tweet-button {
+  background-color: #f0a979;
+  background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
+}
+
+#button-counter {
+  display: flex;
+  justify-content: space-between;
+}
+

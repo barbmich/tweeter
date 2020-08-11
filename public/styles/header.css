@@ -1,7 +1,9 @@
 header {
   display: flex;
   height: 400px;
+  flex-grow: 1;
   width: 10%;
+  min-width: 256px;
   background-color: #f0a979;
   background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
   justify-content: center;
