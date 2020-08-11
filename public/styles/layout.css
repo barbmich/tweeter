@@ -16,14 +16,21 @@ html {
 
  body {
   color: #545149;
-  background-color: #f4f1ec;
+  background: #f9f0af;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-container {
-  
-}
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+.header-and-main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  width: 90%;
+}
+
