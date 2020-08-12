@@ -16,7 +16,7 @@ html {
 
  body {
   display: block;
-  color: #545149;
+  color: #36342f;
   background: #f9f0af;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -28,16 +28,17 @@ html {
 
 .header-and-main {
 
-  display: flex;
   flex-wrap: wrap;
+  display: flex;
   margin-top: 120px;
 
 }
 
 .container {
-
+  
   flex-grow: 9;
+  display: flex;
   flex-direction: column;
-  align-items : center;
+  align-items: stretch;
   
 }
