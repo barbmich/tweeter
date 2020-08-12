@@ -27,11 +27,14 @@ html {
  */
 
 .header-and-main {
+
   display: flex;
   flex-wrap: wrap;
+  margin-top: 120px;
 
 }
 
 .container {
   flex-grow: 9;
+  justify-content: center;
 }
