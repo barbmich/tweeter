@@ -8,26 +8,28 @@
 }
 
 article.tweet {
-
   width: 90%;
   margin: 1.5em;
   border: solid;
 
 }
 
+.handle {
+  color: transparent;
+  justify-self: flex-end;
+  margin-left: auto;
+}
+
+.name {
+  margin-left: 1em;
+}
+
 article.tweet header {
 
   display: flex;
-  justify-content: space-between;
   margin-top: 0.75em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-
-}
-
-.span-name {
-
-  justify-self: left;
 
 }
 
@@ -48,8 +50,13 @@ article.tweet footer {
 }
 
 article.tweet:hover {
-
+  
   font-weight: bold; 
   box-shadow: 5px 10px black;
 
+}
+
+article.tweet:hover .handle {
+
+  color: inherit;
 }

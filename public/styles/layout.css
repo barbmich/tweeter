@@ -35,6 +35,9 @@ html {
 }
 
 .container {
+
   flex-grow: 9;
-  justify-content: center;
+  flex-direction: column;
+  align-items : center;
+  
 }
