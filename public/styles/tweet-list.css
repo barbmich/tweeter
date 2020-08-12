@@ -16,8 +16,8 @@ article.tweet {
 }
 
 .name {
-
-  margin-left: 1em;
+  
+  margin-left: 0.75em;
   
 }
 
@@ -27,7 +27,8 @@ article.tweet header {
   margin-top: 0.75em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-
+  align-items: center;
+  
 }
 
 article.tweet p {
@@ -48,7 +49,7 @@ article.tweet footer {
 
 article.tweet:hover {
   
-  font-weight: bold; 
+  font-weight: bolder;
   box-shadow: 5px 10px #36342f;
 
 }

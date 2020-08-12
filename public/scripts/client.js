@@ -6,25 +6,48 @@
 
  // Test / driver code (temporary). Eventually will get this from the server.
 
-const data = require("..//../server/data-files/initial-tweets.json");
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//     "handle": "@SirIsaac"
+//   },
+//   "content": {
+//     "text": "If I have seen further it is by standing on the shoulders of giants"
+//   },
+//   "created_at": 1461116232227
+// }
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
   },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
 
 const createTweetElement = function (object) {
-  let $tweet =
+  let tweet =
     `<article class="tweet">
       <header>
-        <span>${object.user.avatars}</span>
+        <span><img src="${object.user.avatars}"/></span>
         <span class="name">${object.user.name}</span>
         <span class="handle">${object.user.handle}</span>
       </header>
@@ -34,13 +57,24 @@ const createTweetElement = function (object) {
         <span>icons</span>
       </footer>
     </article>`
-  return $tweet;
+  return tweet;
 }
 
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     $('#tweets-container').append(createTweetElement(tweet));
   }
-}
+};
 
-renderTweets(data);
+$(document).ready(function() {
+  $('#tweet-form').on('submit', (evt) => {
+      evt.preventDefault();
+      // debugger
+      // alert('hello world!!');
+      console.log('hey');
+      $.ajax({url: apiURL, method: 'GET'}).then((response) => {
+          console.log("something came back!!!!!");
+          addItems(response);
+      })
+  })
+});
