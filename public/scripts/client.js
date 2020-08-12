@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// const { response } = require("express");
+
  // Test / driver code (temporary). Eventually will get this from the server.
 
 // const tweetData = {
@@ -67,14 +69,7 @@ const renderTweets = function(tweets) {
 };
 
 $(document).ready(function() {
-  $('#tweet-form').on('submit', (evt) => {
-      evt.preventDefault();
-      // debugger
-      // alert('hello world!!');
-      console.log('hey');
-      $.ajax({url: apiURL, method: 'GET'}).then((response) => {
-          console.log("something came back!!!!!");
-          addItems(response);
-      })
-  })
+
+  renderTweets(data);
+
 });
