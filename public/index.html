@@ -4,6 +4,8 @@
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    <meta charset="UTF-8">
+
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
@@ -29,7 +31,7 @@
     <!-- Top nav bar (fixed) -->
       <nav>
         <span class="brand">tweeter</span>
-        <span class="new-tweet-button">Write a new tweet</span>
+        <button class="new-tweet-button">Write a new tweet</button>
       </nav>
     <!-- Page-specific (main) content here -->
     <div class="header-and-main">
@@ -46,7 +48,7 @@
           <article id="alert">
             <span id="alert-text">hello world</span>
           </article>
-          <h2>Compose Tweet</h2>
+          <header class="tweet-header">Compose Tweet</header>
           <form id="tweet-form" method="POST" action="/tweets/">
             <label for="tweet-text"></label>
             <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
@@ -58,6 +60,7 @@
         </section>
         <section id="tweets-container">
         </section>
+        <a id="button"></a>
       </main>
     </div>
   </body>

@@ -57,6 +57,26 @@ $(document).ready(function () {
   // database content
   loadTweets();
 
+  // button toggles new-tweet display. focus doesn't work :/
+  $('.new-tweet-button').on('click', function() {
+    $('.new-tweet').slideToggle("slow", function() {
+      $('.new-tweet').focus();
+    });
+  })
+
+  $(window).scroll(function() {
+    if ($(window).scrollTop() > 300) {
+      $('#button').addClass('show');
+    } else {
+      $('#button').removeClass('show');
+    }
+  })
+
+  $('#button').on('click', function (evt) {
+    evt.preventDefault();
+    $(window).scrollTop(0);
+  })
+
   // handles the submit event on the new-tweet form.
   $('#tweet-form').on('submit', function (evt) {    
     evt.preventDefault();
@@ -65,6 +85,7 @@ $(document).ready(function () {
     // on each submission, to hide possible warning
     // displayed during previous event handling. 
     $('#alert').slideUp("slow");
+    $('.new-tweet').slideUp("slow");
 
     let currentContent = $('#tweet-text').val();
 
@@ -81,6 +102,8 @@ $(document).ready(function () {
     // creates a string in standard URL-encoded notation
     // so that the API can handle it
     const data = $(this).serialize();
+
+    $('#tweet-text').val('');
 
     // 1. POSTs form content to API,
     // 2. removes all elements from #tweets-container
