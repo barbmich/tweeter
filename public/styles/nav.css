@@ -17,12 +17,17 @@ nav {
 .brand {
 
   font-family: 'Bungee', sans-serif;
+  font-size: 150%;
   padding: 1.5em;
 
 }
 
 .new-tweet-button {
 
-  padding: 1.5em;
+  font-size: 90%;
+  font-weight: bold;
+  border: 2px solid;
+  border-radius: 4px;
+  margin: 1.5em;
   
 }

@@ -85,7 +85,6 @@ $(document).ready(function () {
     // on each submission, to hide possible warning
     // displayed during previous event handling. 
     $('#alert').slideUp("slow");
-    $('.new-tweet').slideUp("slow");
 
     let currentContent = $('#tweet-text').val();
 
@@ -98,6 +97,8 @@ $(document).ready(function () {
       $('#alert-text').text("⚠️ That's waaaay to many characters! ⚠️")
       return $('#alert').slideDown("slow");
     }
+
+    $('.new-tweet').slideUp("slow");
 
     // creates a string in standard URL-encoded notation
     // so that the API can handle it
