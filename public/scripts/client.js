@@ -4,12 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+//  escapes text to avoid injection of code
 const escape = function (string) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(string));
   return div.innerHTML;
 }
 
+// outputs HTML based on object values
 const createTweetElement = function (object) {
 
   const safeHTML = escape(object.content.text);
@@ -30,6 +32,8 @@ const createTweetElement = function (object) {
   return tweet;
 }
 
+// array of tweets is first sorted by date, then function appends each
+// iteration to #tweet-container using the previous function declaration.
 const renderTweets = function (tweets) {
   const sortedTweets = tweets.sort((a, b) => (b.created_at - a.created_at));
   for (const tweet of sortedTweets) {
@@ -37,30 +41,29 @@ const renderTweets = function (tweets) {
   }
 };
 
-const createAlertBox = function (issue) {
-
-  let alert =
-    `<article id="alert">
-      <span>${issue}</span>
-    </article>`;
-
-  return $('.new-tweet').prepend(alert);
-
-}
-
+// loads the following events once document is fully loaded.
 $(document).ready(function () {
 
   const apiURL = '/tweets';
 
+  // when called, fires an AJAX GET request that receives a JSON. this
+  // is parsed and used by renderTweets to outputs the tweets.
   const loadTweets = () => {
     $.ajax({ method: 'GET', url: apiURL }).then((response) => {
       renderTweets(response);
     })
   };
+  // called once as the webpage is loaded to retrieve the initial
+  // database content
   loadTweets();
 
-  $('#tweet-form').on('submit', function (evt) {
+  // handles the submit event on the new-tweet form.
+  $('#tweet-form').on('submit', function (evt) {    
     evt.preventDefault();
+    
+    // #alert is set to "display: none"; called by default
+    // on each submission, to hide possible warning
+    // displayed during previous event handling. 
     $('#alert').slideUp("slow");
 
     let currentContent = $('#tweet-text').val();
@@ -75,8 +78,13 @@ $(document).ready(function () {
       return $('#alert').slideDown("slow");
     }
 
+    // creates a string in standard URL-encoded notation
+    // so that the API can handle it
     const data = $(this).serialize();
 
+    // 1. POSTs form content to API,
+    // 2. removes all elements from #tweets-container
+    // 3. makes a new GET request to API for updated db
     $.ajax({ method: 'POST', url: apiURL, data: data })
       .then(() => $('#tweets-container').empty())
       .then(loadTweets);
