@@ -1,5 +1,6 @@
 
 nav {
+
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -10,13 +11,18 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
+
 }
 
 .brand {
+
   font-family: 'Bungee', sans-serif;
   padding: 1.5em;
+
 }
 
 .new-tweet-button {
+
   padding: 1.5em;
+  
 }
