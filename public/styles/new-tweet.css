@@ -1,52 +1,47 @@
 
 .new-tweet {
-
   margin: 1.5em;
   display: none;
+}
 
+.tweet-header {
+  color: inherit;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 0.75em;
 }
 
 #tweet-text {
-
   width: 100%;
   height: 1.5em;
   resize: none;
   background-color: transparent;
   border: none;
   border-bottom: solid;
-
 }
 
 #tweet-button {
-
   border-radius: 5px;
   color: inherit;
   background-color: #f0a979;
   background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
-
 }
 
 #button-counter {
-
   font-family: 'Bungee', sans-serif;
   display: flex;
   justify-content: space-between;
-
 }
 
 .counter-flag {
-
   color: red;
-
 }
 
 #alert {
-
   display: none;
   border: 4px red solid;
   padding: 1em;
   text-align: center;
   font-weight: bold;
-  
 }
 

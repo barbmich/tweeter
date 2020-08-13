@@ -11,7 +11,7 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="styles/layout.css" type="text/css" />
@@ -24,46 +24,47 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-
+    
     <!-- App JS -->
     <script type="text/javascript" src="scripts/client.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
+    <!-- <div id="aka-body"> -->
       <nav class="nav">
         <span class="brand">tweeter</span>
         <button class="new-tweet-button">Write a new tweet</button>
       </nav>
-    <!-- Page-specific (main) content here -->
-    <div class="header-and-main">
-      <header id="header" class="header">
-        <!-- <div> -->
-          <img id="profile-picture" src="images/profile-hex.png"> 
-        <!-- </div> -->
-        <!-- <div> -->
-          <h2 id="name-display">Your Name</h2>
-        <!-- </div> -->
-      </header>
-      <main class="container">
-        <section class="new-tweet">
-          <article id="alert">
-            <span id="alert-text"></span>
-          </article>
-          <header class="tweet-header">Compose Tweet</header>
-          <form id="tweet-form" method="POST" action="/tweets/">
-            <label for="tweet-text"></label>
-            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-            <div id="button-counter">
-              <button id="tweet-button" type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </div>
-          </form>
-        </section>
-        <section id="tweets-container">
-        </section>
-        <a id="button"></a>
-      </main>
-    </div>
+      <div class="header-and-main">
+        <header class="header">
+          <div>
+            <img src="images/profile-hex.png"> 
+          </div>
+          <div>
+            <h2>Your Name</h2>
+          </div>
+        </header>
+        <main class="container">
+          <section class="new-tweet">
+            <article id="alert">
+              <span id="alert-text"></span>
+            </article>
+            <header class="tweet-header">Compose Tweet</header>
+            <form id="tweet-form" method="POST" action="/tweets/">
+              <label for="tweet-text"></label>
+              <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+              <div id="button-counter">
+                <button id="tweet-button" type="submit">Tweet</button>
+                <output name="counter" class="counter" for="tweet-text">140</output>
+              </div>
+            </form>
+          </section>
+          <section id="tweets-container">
+          </section>
+          <i id="button" class="fas fa-angle-double-up"></i>
+        </main>
+      </div>
+    <!-- </div> -->
   </body>
 </html>

@@ -26,7 +26,11 @@ const createTweetElement = function (object) {
       <p>${safeHTML}</p>
       <footer>
         <span>${moment(object.created_at).fromNow()}</span>
-        <span>icons</span>
+        <span>
+          <i class="far fa-heart"></i>
+          <i class="fas fa-retweet"></i>
+          <i class="fas fa-exclamation-circle"></i>
+        </span>
       </footer>
     </article>`
   return tweet;
@@ -59,10 +63,10 @@ $(document).ready(function () {
 
   // button toggles new-tweet display. focus doesn't work :/
   $('.new-tweet-button').on('click', function() {
-    $('.new-tweet').slideToggle("slow", function() {
-      $('.new-tweet').focus();
-    });
-  })
+    $('.new-tweet').slideToggle("slow");
+    $('#tweet-text').focus();
+  });
+
 
   $(window).scroll(function() {
     if ($(window).scrollTop() > 300) {
@@ -112,6 +116,6 @@ $(document).ready(function () {
     $.ajax({ method: 'POST', url: apiURL, data: data })
       .then(() => $('#tweets-container').empty())
       .then(loadTweets);
-
   })
-})
+
+});

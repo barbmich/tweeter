@@ -1,6 +1,6 @@
 
 nav {
-
+  padding: 1.5em;
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -10,23 +10,28 @@ nav {
   color: #ffffff;
   position: fixed;
   top: 0;
-
 }
 
 .brand {
-
   font-family: 'Bungee', sans-serif;
   font-size: 150%;
-  padding: 1.5em;
-
 }
 
 .new-tweet-button {
-
   font-size: 90%;
   font-weight: bold;
   border: 2px solid;
   border-radius: 4px;
-  margin: 1.5em;
-  
+}
+
+.new-tweet-button:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .nav {
+    background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
+    background-color: #f0a979;
+  }
 }

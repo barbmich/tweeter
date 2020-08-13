@@ -5,15 +5,11 @@
  */
 
 html {
-
   box-sizing: border-box;
-
 }
 
 *, *:before, *:after {
-
   box-sizing: inherit;
-  
 }
 
 /*
@@ -21,13 +17,11 @@ html {
  */
 
  body {
-
   display: block;
   color: #36342f;
   background: #f9f0af;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-
 }
 
 /*
@@ -35,56 +29,48 @@ html {
  */
 
 .header-and-main {
-
   display: flex;
-  flex-wrap: wrap;
-
 }
 
 .container {
-
-  margin-top: 120px;  
-  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  
+  width: 100%;
+  margin-top: 120px;
 }
 
 #button {
-
-  content: "↑";
+  font-family: fontAwesome;
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 3em;
   display: inline-block;
-  color: #f9f0af;
+  /* color: #f9f0af; */
   background-color: #704f50;
-  width: 3em;
-  height: 3em;
+  width: 1em;
+  vertical-align: top;
   text-align: center;
   border-radius: 100%;
+  border: solid 3px;
   margin: 25px;
   position: fixed;
   bottom: 30px;
   right: 30px;
   opacity: 0;
   visibility: hidden;
-
 }
 
 #button:hover {
-  
-  cursor: pointer;
-  color: #704f50;
-  transform: scale(1.25);
-  color:  #f9f0af;
 
+  cursor: pointer;
+  transform: scale(1.25);
+  color: #f9f0af;
 }
 
 #button::after {
-
-  content: "↑";
   font-weight: bolder;
   font-size: 200%;
-
 }
 
 #button.show {
@@ -94,37 +80,19 @@ html {
 
 @media only screen and (max-width: 768px) {
 
-  .nav {
-
-    height: 250px;
-    background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
-    background-color: #f0a979;
-
+  .header-and-main {
+    flex-wrap: wrap;
   }
 
-  .header {
-    
-    /* display: flex;
-    height: 250px; */
-    width: 100%;
-    /* margin: auto;
-    position: absolute;
-    top: 0;
-    background-color: transparent;
-    background-image: none;   */
-
+  .container {
+    margin-top: 500px;
   }
+}
 
-  #profile-picture {
+@media only screen and (min-width: 1440px) {
 
-    transform: scale(0.75);
-
+  .header-and-main {
+  width: 1440px;
+  margin: auto;
   }
-  
-  #display-name {
-
-
-
-  }
-
 }
