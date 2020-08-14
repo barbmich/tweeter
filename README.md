@@ -1,8 +1,24 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. It displays fictituous tweets in reverse-chronological order (most recent at the top).
+An initial database with 2 entries already exists, the rest can be posted by the user.
+A counter for remaining characters is available.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This project has been completed for didactic purposes: each student forked and cloned the initial repository, then built upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+
+## Screenshots
+
+The main - and only! - page. I hope you like wafers!
+![Main-menu](https://github.com/barbmich/tweeter/blob/master/docs/main-menu.png)
+
+New tweet button - it toggles the tweet form. A new AJAX POST request is made to the API with each tweet submission.
+![new-tweet-button](https://github.com/barbmich/tweeter/blob/master/docs/new-tweet-button.png)
+
+The list of tweets. When your many personalities had each a chance to express themselves, a button allows to go back to the top of the page.
+![tweets-list](https://github.com/barbmich/tweeter/blob/master/docs/tweets-list.png)
+
+2 different layouts (above and below 768px of width), with the tweets list that remains centered when past 1440px of width.
+![responsive-design](https://github.com/barbmich/tweeter/blob/master/docs/responsive-design.png)
 
 ## Getting Started
 
