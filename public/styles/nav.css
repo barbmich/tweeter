@@ -30,7 +30,7 @@ nav {
 
 @media only screen and (max-width: 768px) {
 
-  .nav {
+  nav {
     background-image: url("https://www.transparenttextures.com/patterns/black-scales.png");
     background-color: #f0a979;
   }
