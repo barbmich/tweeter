@@ -101,25 +101,18 @@ $(document).ready(function() {
     // on each submission, to hide possible warning
     // displayed during previous event handling.
     $('#alert').slideUp("slow");
-    // , () => {
 
-      // these checks are called asynchronously to avoid having
-      // a different warning displayed before the slideUp animation
-      // completes.
-      
-      // flags missing content in the form submission.
-      if (currentContent.length === 0) {
-        $('#alert-text').text("⚠️ You should enter some text! ⚠️");
-        return $('#alert').slideDown("slow");
-      }
+    // flags missing content in the form submission.
+    if (currentContent.length === 0) {
+      $('#alert-text').text("⚠️ You should enter some text! ⚠️");
+      return $('#alert').slideDown("slow");
+    }
 
-      // flags exceeding characters in the form submission.
-      if (currentContent.length > 140) {
-        $('#alert-text').text("⚠️ That's waaaay to many characters! ⚠️");
-        return $('#alert').slideDown("slow");
-      }
-
-    // }
+    // flags exceeding characters in the form submission.
+    if (currentContent.length > 140) {
+      $('#alert-text').text("⚠️ That's waaaay to many characters! ⚠️");
+      return $('#alert').slideDown("slow");
+    }
 
     // creates a string in standard URL-encoded notation
     // so that the API can handle it
