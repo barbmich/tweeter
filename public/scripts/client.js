@@ -58,16 +58,25 @@ $(document).ready(function () {
     })
   };
   // called once as the webpage is loaded to retrieve the initial
-  // database content
+  // database content.
   loadTweets();
 
-  // button toggles new-tweet display. focus doesn't work :/
+  // button toggles new-tweet display, and focuses text-area.
   $('.new-tweet-button').on('click', function() {
-    $('.new-tweet').slideToggle("slow");
-    $('#tweet-text').focus();
+
+    if ($('.new-tweet').css('display') === 'none') {
+      $('.new-tweet').slideDown('slow');
+      $('.new-tweet textarea').focus();
+    } else {
+      $('.new-tweet').slideUp('slow');
+    }
+
+    // $('.new-tweet').slideToggle("slow");
+    // $('#tweet-text').focus();
   });
 
-
+  // this event keeps track of the sidebar on the window.
+  // If condition is met, adds a button (unhides it).
   $(window).scroll(function() {
     if ($(window).scrollTop() > 300) {
       $('#button').addClass('show');
@@ -76,6 +85,7 @@ $(document).ready(function () {
     }
   })
 
+  // when button is clicked, the sidebar for window returns to 0 (top of the window).
   $('#button').on('click', function (evt) {
     evt.preventDefault();
     $(window).scrollTop(0);
@@ -85,24 +95,29 @@ $(document).ready(function () {
   $('#tweet-form').on('submit', function (evt) {    
     evt.preventDefault();
     
+    let currentContent = $('#tweet-text').val();
+
     // #alert is set to "display: none"; called by default
     // on each submission, to hide possible warning
     // displayed during previous event handling. 
-    $('#alert').slideUp("slow");
+    $('#alert').slideUp("slow", () => {
 
-    let currentContent = $('#tweet-text').val();
+      // these checks are called asynchronously to avoid having
+      // a different warning displayed before the slideUp animation
+      // completes. It was bothering me a lot :)
+      
+      // flags missing content in the form submission.
+      if (currentContent.length === 0) {
+        $('#alert-text').text("⚠️ You should enter some text! ⚠️")
+        return $('#alert').slideDown("slow");
+      }
 
-    if (currentContent.length === 0) {
-      $('#alert-text').text("⚠️ You should enter some text! ⚠️")
-      return $('#alert').slideDown("slow");
-    }
-
-    if (currentContent.length > 140) {
-      $('#alert-text').text("⚠️ That's waaaay to many characters! ⚠️")
-      return $('#alert').slideDown("slow");
-    }
-
-    $('.new-tweet').slideUp("slow");
+      // flags exceeding characters in the form submission.
+      if (currentContent.length > 140) {
+        $('#alert-text').text("⚠️ That's waaaay to many characters! ⚠️")
+        return $('#alert').slideDown("slow");
+      }
+    });
 
     // creates a string in standard URL-encoded notation
     // so that the API can handle it
